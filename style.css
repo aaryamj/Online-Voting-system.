@@ -1,0 +1,959 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  overflow-x: hidden;
+}
+::-webkit-scrollbar{
+  height: 0;
+  width: .6rem;
+}
+
+::-webkit-scrollbar-track{
+  background-color: #581845;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #FFC300;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+
+.navbar{
+  position: fixed;
+  z-index: 100000000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #581845;
+  border-bottom: 2px solid #FFC300;
+
+}
+
+.container-fluid{
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.navbar-nav{
+  margin-left: 22rem;
+  gap: 15px;
+}
+
+
+.logo{
+    margin-bottom: 8px;
+}
+
+.navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.4),transparent);
+  transition: .5s;
+}
+.navbar:hover::before{
+  left: 100%;
+}
+
+.navbar-nav .nav-link {
+  /* Your CSS styles for the navigation links */
+  display: flex;
+  position: relative;
+  font-size: 1.1em;
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 20px;
+  transition: .5s;
+}
+.navbar-nav .nav-link:hover{
+  color: #FFC300;
+}
+.navbar-nav .nav-link span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-bottom: 2px solid #FFC300;
+  border-radius: 15px;
+  transform: scale(0) translateY(50px);
+  opacity: 0;
+  transform: 0.5s;
+}
+.navbar-nav .nav-link:hover span{
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+
+/* Target the active (current) link */
+.navbar-nav .nav-link.active {
+  /* Your CSS styles for the active link */
+  font-size: 1.1em;
+  color: white;
+  text-decoration: none;
+  transition: .5s;
+}
+.navbar-nav .nav-link.active:hover{
+  color: #FFC300;
+}
+.navbar-nav .nav-link.active span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-bottom: 2px solid #FFC300;
+  border-radius: 15px;
+  transform: scale(0) translateY(50px);
+  opacity: 0;
+  transform: 0.5s;
+}
+.navbar-nav .nav-link.active:hover span{
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+/* Target the dropdown menu */
+.navbar-nav .dropdown-menu {
+  /* Your CSS styles for the dropdown menu */
+  background: #581845;
+  
+}
+
+
+/* Target dropdown menu items */
+.navbar-nav .dropdown-menu .dropdown-item {
+  /* Your CSS styles for dropdown menu items */
+  font-size: 1.1em;
+  color: #fff;
+  text-decoration: none;
+  transition: .5s;
+}
+.navbar-nav .dropdown-menu .dropdown-item:hover{
+  color: black;
+}
+.navbar-nav .dropdown-menu .dropdown-item span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-bottom: 2px solid #FFC300;
+  border-radius: 10px;
+  transform: scale(0) translateY(50px);
+  opacity: 0;
+  transform: 0.5s;
+  /* -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px; */
+}
+.navbar-nav .dropdown-menu .dropdown-item:hover span{
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.navbar-toggler{
+  background-color: white;
+  color: #581845;
+}
+
+.navbar-toggler:hover{
+  color: #ffc107;
+}
+
+
+.btn {
+  width: 130px;
+  background-color: #FFC300;
+  color: black;
+  font-size: 15px;
+  font-weight: 500;
+  border-color: black;
+}
+
+.btn:hover{
+  background-color: #581845 ;
+  border-color: black;
+}
+
+/* Target the search bar */
+.form-control {
+  /* Your CSS styles for the search input field */
+}
+
+/* Target the search button */
+.btn-outline-danger[type="submit"] {
+  /* Your CSS styles for the search button */
+}
+
+/* Target the login and signup buttons */
+.btn-danger {
+  /* Your CSS styles for the login and signup buttons */
+}
+
+/* ****************************Our About Section********************************* */
+
+.about-section{
+  padding-top: 9rem;
+  background-color: #C70039;
+}
+
+.about-services{
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+
+.vote-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vote-image img {
+  width: 60%;
+  box-shadow: -2rem -2rem 0 0 #FFC300;
+  display: inline-block;
+}
+
+.about-content{
+  margin-bottom: 4rem;
+  font-size: 2.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: white;
+}
+
+.vote-data p{
+  font-size: 1rem;
+  margin-right: 7rem;
+  color: #fff;
+}
+
+
+/* ****************************Our Services Section********************************* */
+
+
+.section-services {
+  background-color: #581845;
+  color: #fff;
+  transition: all 0.7s linear;
+}
+.container1{
+  margin-left: 40rem;
+}
+
+.Services-content{
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  position: relative;
+  padding-top: 7rem;
+}
+
+.Services-content::before{
+  content: '';
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 1.5rem;
+  height: 1.3rem;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.Services-content::after{
+  content: '';
+  position: absolute;
+  top: 115%;
+  left: 1rem;
+  min-width: 20rem;
+  height: .3rem;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.container1 p{
+  margin-top: 4rem;
+  margin-right: 35rem;
+  margin-bottom: 4rem;
+}
+
+.section-services .grid {
+   display: grid;
+  grid-template-columns: 50% 50%;
+} 
+
+.service-box {
+  text-align: center;
+  border: 1px solid #FFC300;
+  border-radius: 10px;
+  padding: 1.4rem 1.4rem;
+  transition: all 0.2s linear;
+  margin: 2rem;
+  box-shadow: .2rem .2rem black;
+}
+
+.service-box:hover,
+.service-box:active {
+  transform: translateY(-3rem);
+}
+
+.service-icon {
+  width: 4rem;
+  height: 4rem;
+  background-color: #FFC300;
+  display: inline-block;
+  border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+  padding: 1.4rem 1.8rem;
+  position: relative;
+  color: #581845;
+  animation: water-wave 3s linear infinite;
+}
+
+.service-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+  background: transparent;
+  border: 1px solid #581845;
+  animation: water-wave 3s linear infinite;
+}
+
+@keyframes water-wave {
+  0% {
+    border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+  }
+  50% {
+    border-radius: 3% 97% 15% 85% / 72% 0% 100% 28%;
+  }
+  100% {
+    border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+  }
+}
+
+.service-box h3 {
+  text-transform: capitalize;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.8rem ;
+}
+
+.service-box p{
+  font-size: 0.8rem;
+}
+
+/* ****************************Our Contact Section********************************* */
+.main-text{
+  width: 100%;
+  text-align: center;
+  margin-top: 7rem;
+}
+
+.main-text h2{
+  font-weight: 700;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.main-text span{
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.contact {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #C70039;
+  width: 100%;
+}
+
+.contact-container{
+  margin-left: 80px;
+  width: 80%;
+  border-radius: 6px;
+  padding: 20px 60px 40px 40px;
+
+}
+
+.contact-container .contact-content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-container .contact-content .left-side{
+  width: 25%;
+  height: 100%;
+}
+
+
+
+.contact-container .contact-content .left-side .details{
+  margin: 10px;
+  text-align: center;
+}
+
+.call-content{
+  background-color: #581845;
+  color: #FFC300;
+  cursor: pointer;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  font-size: 30px;
+  border: 2.5px solid #FFC300;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.contact-content .left-side .details .topic{
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+
+}
+
+.left-side .details .text-one{
+  font-size: 16px;
+  padding-right: 2rem;
+  color: #fff;
+}
+
+.contact-container .contact-content .right-side{
+  width: 75%;
+  margin-left: 75px;
+}
+
+.contact-content .right-side .topic-text{
+  font-size: 15px;
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.contact form{
+  text-align: center;
+  max-width: 50rem;
+  margin: 1rem auto;
+  margin-bottom: 3rem;
+
+}
+
+.contact form input,
+.contact form textarea{
+  width: 100%;
+  background: #581845;
+  margin-bottom: 0.8rem;
+  bottom: none;
+  border-radius: 8px;
+  padding: .7rem;
+  color: white;
+}
+
+.formBtn{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+}
+
+.formBtn:hover{
+  color: white;
+}
+
+
+
+/* ****************************Our Footer Section********************************* */
+
+footer{
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #581845;
+  height: auto;
+  padding-top: 40px;
+  width: 100vw;
+  color: white;
+
+}
+
+.footer-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-content .paragraph{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paragraph .logo{
+  width: 100px;
+
+}
+
+.footer-content h3{
+  font-size: 2.1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 3rem;
+
+}
+
+.footer-content p{
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.social-icon{
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+
+.social-icon li{
+  margin: 0 10px;
+}
+
+.social-icon a{
+  text-decoration: none;
+  color: #FFC300;
+  background-color: #581845;
+  border: 2.1px solid #fff;
+  padding: 5px;
+  border-radius: 60%;
+}
+
+.social-icon a i{
+  font-size: 1.1rem;
+  width: 20px;
+  transition: color .4s ease;
+}
+
+.social-icon a:hover{
+  color: #581845;
+  background-color: #FFC300;
+  border-radius: 60%;
+  border: 1.3px solid black;
+}
+
+.footer-bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #581845;
+  width: 100%;
+  height: 80px;
+  padding: 20px;
+}
+
+.footer-bottom p{
+  font-size: 15px;
+ margin-left: 8rem;
+}
+
+.footer-menu{
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  margin-right: 8rem;
+}
+
+.footer-menu ul{
+  display: flex;
+}
+
+.footer-menu ul li{
+padding-right: 10px;
+display: block;
+}
+
+.footer-menu ul li a{
+  color: #FFC300;
+  border: 1.3px solid white;
+  padding: 6px 15px;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+.footer-menu ul li a:hover{
+  color: #fff;
+  background-color: #FFC300;
+  border: 1.3px solid black;
+}
+
+
+/* ****************************Our Landing Page  CSS********************************* */
+
+/* ****************************Our header Section********************************* */
+.container-fluids{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbars{
+  position: fixed;
+  z-index: 100000000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #581845;
+  border-bottom: 2px solid #FFC300;
+}
+
+.logos{
+ margin-left: 10rem;
+ width: 100px;
+ margin-top: .4rem;
+}
+
+.navbars::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.4),transparent);
+  transition: .5s;
+}
+
+.navbars:hover::before{
+  left: 100%;
+}
+
+.navbar-navs{
+  list-style: none;
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 40rem;
+}
+.navbar-navs .nav-link {
+  /* Your CSS styles for the navigation links */
+  display: flex;
+  position: relative;
+  font-size: 1.1em;
+  text-decoration: none;
+  padding: 6px 20px;
+  transition: .5s;
+}
+.navbar-navs .nav-link:hover{
+  color: #FFC300;
+}
+.navbar-navs .nav-link span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-bottom: 2px solid #FFC300;
+  border-radius: 15px;
+  transform: scale(0) translateY(50px);
+  opacity: 0;
+  transform: 0.5s;
+}
+.navbar-navs .nav-link:hover span{
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+
+/* ****************************Our Profile Section********************************* */
+.profile-container{
+  margin-top: 5rem;
+  padding-top: 5rem;
+  background-color: #581845;
+  width: 100%;
+  height: auto;
+}
+
+.profile-image-container img{
+  margin-top: 5rem;
+  margin-left: 10rem;
+  width: 300px;
+  border-radius: 100%;
+}
+
+.profile-image-actions{
+  margin-left: 15rem;
+  margin-top: .6rem;
+  width: 140px;
+  height: 30px;
+  background-color: #FFC300;
+  border-radius: 5px;
+  color: #581845;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  box-shadow: 2px solid black;
+  margin-bottom: 1rem;
+}
+
+.profile-image-actions:hover{
+background-color: #581845;
+border: 2px solid black;
+color: #fff;
+}
+.btns{
+  font-size: .8rem;
+  margin-left: .3rem;
+}
+
+.profile-containers{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-details{
+  color: #fff;
+  margin-right: 20rem;
+}
+
+.btn1{
+  background-color: #FFC300;
+  color: #581845;
+  font-size: .8rem;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-bottom: 2px solid black;
+}
+
+.btn1:hover{
+  background-color: #581845;
+  color: #fff;
+}
+
+.election-section{
+  background-color: #C70039;
+  color: #fff;
+  padding-top: 7rem;
+  padding-bottom: 3rem;
+}
+.election-section h1{
+  margin-left: 40rem;
+}
+
+.election-section p{
+  margin-left: 40rem;
+}
+.election-container{
+  padding-top: 1rem;
+  background-color: #581845;
+  /* margin-bottom: 2rem; */
+}
+
+.election-card{
+  background-color: #FFC300;
+  margin-bottom: 4rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.btn2{
+  text-decoration: none;
+  background-color: #581845;
+  color: #Fff;
+  font-size: 1rem;
+  
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-bottom: 3px solid black;
+  border: 1px solid black;
+  
+}
+
+.btn2:hover{
+  background-color: #FFC300;
+  color: #581845;
+}
+
+.page-container{
+  background-color: #581845;
+}
+
+
+.election-cards{
+  background-color: #C70039;
+}
+
+.candidate-details{
+  background-color: #C70039;
+}
+
+.back-bottom{
+  margin-left: 10rem;
+}
+
+.btn4{
+  font-size: 1rem;
+  background-color: #FFC300;
+  color: #581845;
+  border-bottom: 2px solid black;
+  text-decoration: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  align-items: center;
+  gap: 4rem;
+}
+
+.btn4:hover{
+  background-color: #581845;
+  color: #FFC300;
+}
+
+.Upcoming-Election{
+background-color: #581845;
+color: #fff;
+align-items: center;
+padding-top: 4rem;
+}
+
+.Upcoming-Election h1{
+  color: #FFC300;
+  margin-left: 30rem;
+  padding-top: 5rem;
+}
+
+.Upcoming-Election p{
+  margin-left: 35rem;
+  padding-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.election-candidate{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+  margin-left: 10rem;
+}
+
+.candidate-first img{
+  margin-top: 2rem;
+  width: 20rem;
+  height: 12rem;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-bottom: 2px solid #FFC300;
+}
+
+.candidate-first h2{
+  color: #FFC300;
+  margin-left: 4rem;
+  margin-top: 1rem;
+}
+
+.candidate-first h6{
+  margin-left: 4rem;
+}
+
+.candidate-first p{
+  margin-left: 4rem;
+  font-size: .8rem;
+}
+
+.form-check{
+  font-size: 1rem;
+  margin-left: 6rem;
+  margin-top: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.btn3{
+  width: 120px;
+  height: 3rem;
+  font-size: 1.2rem;
+  list-style: none;
+  text-decoration: none;
+  color: #581845;
+  background-color: #FFC300;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-bottom: 2px solid black;
+  margin-left: 6rem;
+}
+
+.btn3:hover{
+  background-color: #581845;
+  color: #FFC300;
+}
+
+
+
+/* **************************** Thank You Popup Notification ********************************* */
+
+.modal{
+  background-color: #581845;
+}
+.modal-dialog{
+  background-color: #FFC300;
+}
